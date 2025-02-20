@@ -11,7 +11,8 @@ jobs:
       matrix:
         directory: [1,2,3,4,5,6]
         os: [ ubuntu-24.04-arm ]
-    runs-on: ${{ matrix.os }}
+    #runs-on: ${{ matrix.os }}
+    runs-on: self-hosted
     steps:
       - name: vm info
         run: curl -s -H Metadata:true --noproxy "*" "http://169.254.169.254/metadata/instance?api-version=2021-02-01" | jq      
